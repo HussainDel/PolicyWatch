@@ -55,15 +55,6 @@ Without the text index, semantic retrieval still works. Keyword and vector ranki
 - `chunks`: `documentId`, `documentTitle`, `version`, `category`, `pageNumber`, `chunkIndex`, `text`, 768-dimensional `embedding`, and `createdAt`.
 - `comparisons`: selected document IDs, policy/version labels and creation time (a recent activity log, not a full result archive).
 
-## Demo for judges
-
-1. Configure Gemini and Atlas, create both indexes, and wait for the vector index to become queryable.
-2. Open **Knowledge base** and click **Load Demo Dataset**. This creates three labelled synthetic documents through the same chunking, embedding and storage pipeline as uploaded PDFs. Wait for indexed statuses.
-3. In **Policy assistant**, ask “What is the minimum CGPA required in the 2026 internship policy?” Click a citation to inspect its actual passage and page.
-4. In **Compare versions**, choose Internship Policy 2025 and 2026. Inspect citations for the eligibility, duration and documentation findings.
-5. In **Conflict detection**, ask whether internship and examination attendance rules conflict. Review both cited passages; the synthetic exam document distinguishes classroom and internship attendance.
-6. In **Source explorer**, inspect pages and run the retrieval evaluation. It reports actual retrieved IDs and a success rate for four expected-evidence cases. The absent-topic query is deliberately unscored because nearest-neighbor retrieval can return irrelevant passages; it does not prove answerability.
-7. Try a question not covered by the documents; the assistant is instructed to state when supporting information is insufficient.
 
 ## Deployment on Vercel
 
